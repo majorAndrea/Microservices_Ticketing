@@ -4,11 +4,7 @@ import request from "supertest";
 import { app } from "../app";
 
 declare global {
-  namespace NodeJS {
-    interface Global {
-      getCookieFromSignUp(): Promise<string[]>;
-    }
-  }
+  var getCookieFromSignUp: () => Promise<string[]>;
 }
 
 let mongo: any;
@@ -23,6 +19,8 @@ beforeAll(async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
+  jest.setTimeout(15000);
 });
 
 beforeEach(async () => {

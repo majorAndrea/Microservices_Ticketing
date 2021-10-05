@@ -7,6 +7,11 @@
     "start": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache"
   },
+  "config": {
+    "mongodbMemoryServer": {
+      "arch": "x64"
+    }
+  },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
