@@ -18,8 +18,6 @@ beforeAll(async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
-  jest.setTimeout(15000);
 });
 
 beforeEach(async () => {
@@ -38,7 +36,7 @@ afterAll(async () => {
 global.signIn = () => {
   // Build jwt payload
   const payload = {
-    id: "degf5343423434dd",
+    id: new mongoose.Types.ObjectId(),
     email: "test@test.com",
   };
 
